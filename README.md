@@ -14,10 +14,10 @@ The learning goals of this project are:
 # Assignment Tasks
 
 ## Coding Assessment
-* Write a Fasta Parser (Write this code in the parse.py file)
-* Write a Fastq Parser (Write this code in the parse.py file)
-* Write a Transcription Function (Write this code in the seq.py file)
-* Write a Reverse Transcription Function (Write this code in the seq.py file)
+-[ ] Write a Fasta Parser (Write this code in the parse.py file)
+-[ ] Write a Fastq Parser (Write this code in the parse.py file)
+-[x] Write a Transcription Function (Write this code in the seq.py file)
+-[x] Write a Reverse Transcription Function (Write this code in the seq.py file)
 
 ## Software Development Assessment
 * Create a pip installable tool (only locally, do not submit to PyPI)
