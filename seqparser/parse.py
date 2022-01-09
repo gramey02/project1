@@ -122,7 +122,9 @@ class FastaParser(Parser):
         """
         #if there are no sequences left in the file, then raise StopIteration
         header = f_obj.readline()
+        header = header.strip()
         seq = f_obj.readline()
+        seq = seq.strip()
         if(len(header)==0):
             raise StopIteration
         return (header, seq)
@@ -138,8 +140,12 @@ class FastqParser(Parser):
         """
         #if there are no sequences left in the file, then raise StopIteration
         header = f_obj.readline()
+        header = header.strip()
         seq = f_obj.readline()
+        seq = seq.strip()
+        skip=f_obj.readline() #skip the '+'
         quality = f_obj.readline()
+        quality = quality.strip()
         if(len(header)==0):
             raise StopIteration
         return (header, seq, quality)
