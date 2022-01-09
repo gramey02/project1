@@ -26,7 +26,8 @@ def test_transcribe():
     Write your unit test for the
     transcribe function here.
     """
-    pass
+    #check that ACTG is properly transcribed to => ACUG
+    assert transcribe("ACTG")=="ACUG"
 
 
 def test_reverse_transcribe():
@@ -34,4 +35,6 @@ def test_reverse_transcribe():
     Write your unit test for the
     reverse transcribe function here.
     """
-    pass
+    #assert that ACTG is properly transcribed and then reversed to => GUCA
+    
+    assert reverse_transcribe("ACTG")=="GUCA"
