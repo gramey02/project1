@@ -17,7 +17,6 @@ def reverse_transcribe(seq: str) -> str:
     all `T` to `U` then reverses the sequence
     """
     transcript = transcribe(seq) #call transcribe function to transcribe the sequence (convert Ts to Us)
-    
-    reverseTranscript = reverse(transcript) #reverse the transcribed string using the reverse function
+    revTranscript = transcript[::-1] #reverse the transcribed string using the reverse function
     
     return revTranscript
