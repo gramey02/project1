@@ -120,8 +120,11 @@ class FastaParser(Parser):
         """
         returns the next fasta record
         """
-        header = next(f_obj)
-        seq = next(f_obj)
+        #if there are no sequences left in the file, then raise StopIteration
+        header = f_obj.readline()
+        seq = f_obj.readline()
+        if(len(header)==0):
+            raise StopIteration
         return (header, seq)
 
 
@@ -133,8 +136,11 @@ class FastqParser(Parser):
         """
         returns the next fastq record
         """
-        header = next(f_obj)
-        seq = next(f_obj)
-        quality = next(f_obj)
+        #if there are no sequences left in the file, then raise StopIteration
+        header = f_obj.readline()
+        seq = f_obj.readline()
+        quality = f_obj.readline()
+        if(len(header)==0):
+            raise StopIteration
         return (header, seq, quality)
 
