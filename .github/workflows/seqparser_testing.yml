@@ -1,6 +1,6 @@
 name: seqparser_testing
 
-on: [push]
+on: push
 
 jobs:
   build:
