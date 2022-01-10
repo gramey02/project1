@@ -28,7 +28,7 @@ def test_FastaParser():
     your FastaParser class and assert that it properly
     reads in the example Fasta File.
     """
-    filename = "/Users/graceramey/Desktop/UCSF/Algorithms/project1/data/test.fa" #use test.fa as the test file
+    filename = "./data/test.fa" #use test.fa as the test file
     obj1_fasta = FastaParser(filename) #generate an instance of FastaParser
     
     #check if there are 100 sequences read in
@@ -47,7 +47,7 @@ def test_FastqParser():
     your FastqParser class and assert that it properly
     reads in the example Fastq File.
     """
-    filename = "/Users/graceramey/Desktop/UCSF/Algorithms/project1/data/test.fq" #use test.fa as the test file
+    filename = "./data/test.fq" #use test.fa as the test file
     obj1 = FastqParser(filename) #generate an instance of FastaParser
     
     #check if there are 100 sequences read in
