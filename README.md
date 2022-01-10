@@ -127,7 +127,7 @@ output : ACUGAACCC
 ```
 
 ### Reverse-Transcription
-This process is very similar to the transcription process except that the reverse transcription process is mimicing the reverse strand of the nucleic acid. However, to a computer scientist, this process can be thought of as the nesting of functions: `reverse(transcribe(sequence))` 
+This process is used to return the reverse of the complement strand. It is equivalent to a 'reverse(transcribe(seq))'.
 
 ```
 input  :     A C T G A A C C C
