@@ -36,6 +36,7 @@ def test_FastaParser():
     for rec in obj1_fasta:
         assert(('>' in rec[0]) == True) #check to make sure each header was parsed properly, and starts with >
         assert(len(rec) == 2) #check to make sure each header and sequence was read in properly as a tuple of length 2 (header, seq)
+        assert(len(rec[1]) == 100) #check to make sure each sequence has 100 bases in it
         count+=1 #update count variable upon each iteration
     assert(count == 100) #check to see if count, the number of sequences, is 100
 
@@ -55,5 +56,6 @@ def test_FastqParser():
     for rec in obj1:
         assert(('@' in rec[0]) == True) #check to make sure each header was parsed properly, and starts with @
         assert(len(rec) == 3) #check to make sure each header and sequence was read in properly as a tuple of length 3 (header, seq, quality)
+        assert(len(rec[1]) == 100) #check to make sure each sequence has 100 bases in it
         count+=1 #update count variable upon each iteration
     assert(count == 100) #check to see if count, the number of sequences, is 100
