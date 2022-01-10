@@ -19,6 +19,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install .
         pip install pytest
-    - name: Analysing the code with pylint
+    - name: Test that seqparser was properly installed and coded by running pytest
       run: |
         pytest
