@@ -1,4 +1,4 @@
-name: seqparser_testing
+name: Pylint
 
 on: [push]
 
@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-	pip install .
-    - name: Test seqparser module after installation
+        pip install pylint
+    - name: Analysing the code with pylint
       run: |
-        pytest
+        pylint `ls -R|grep .py$|xargs`
