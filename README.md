@@ -130,9 +130,11 @@ output : ACUGAACCC
 This process is very similar to the transcription process except that the reverse transcription process is mimicing the reverse strand of the nucleic acid. However, to a computer scientist, this process can be thought of as the nesting of functions: `reverse(transcribe(sequence))` 
 
 ```
-input  : A C T G A A C C C
-         | | | | | | | | |
-output : U G U C U U G G G
+input  :     A C T G A A C C C
+             | | | | | | | | |
+transcribe : U G U C U U G G G
+
+output: G G G U U C A G U
 ```
 
 # Github Actions
