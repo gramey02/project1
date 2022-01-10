@@ -1,4 +1,4 @@
-name: Pylint
+name: seqparser_Actions
 
 on: [push]
 
