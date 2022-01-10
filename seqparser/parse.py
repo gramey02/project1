@@ -99,6 +99,7 @@ class Parser:
                 try:
                     rec = self.get_record(f_obj)
                     yield rec
+                #include 'StopIteration' exception to break out of while loop if there are no more 'rec's in the Fast[aq] object
                 except StopIteration:
                     break
 
@@ -120,13 +121,12 @@ class FastaParser(Parser):
         """
         returns the next fasta record
         """
-        #if there are no sequences left in the file, then raise StopIteration
-        header = f_obj.readline()
-        header = header.strip()
-        seq = f_obj.readline()
-        seq = seq.strip()
+        header = f_obj.readline() #assign header to the next line of the fasta file
+        header = header.strip() #remove the newline characters '\n' in header that will mess up parsing
+        seq = f_obj.readline() #assign seq to the next line of the fasta file
+        seq = seq.strip() #remove the newline characters in seq that will mess up parsing
         if(len(header)==0):
-            raise StopIteration
+            raise StopIteration #if there are no sequences left in the file (i.e. end of file is reached), then raise StopIteration
         return (header, seq)
 
 
@@ -139,14 +139,14 @@ class FastqParser(Parser):
         returns the next fastq record
         """
         #if there are no sequences left in the file, then raise StopIteration
-        header = f_obj.readline()
-        header = header.strip()
-        seq = f_obj.readline()
-        seq = seq.strip()
-        skip=f_obj.readline() #skip the '+'
-        quality = f_obj.readline()
-        quality = quality.strip()
+        header = f_obj.readline() #assign header to the next line of the fastq file
+        header = header.strip() #remove the newline characters '\n' in header that will mess up parsing
+        seq = f_obj.readline() #assign seq to the next line of the fastq file
+        seq = seq.strip() #remove the newline characters in seq that will mess up parsing
+        skip=f_obj.readline() #skip the '+' line in the fastq file
+        quality = f_obj.readline() #assign quality to the next line of the fastq file
+        quality = quality.strip() #remove the newline characters in quality that will mess up parsing
         if(len(header)==0):
-            raise StopIteration
+            raise StopIteration #if there are no sequences left in the file (i.e. end of file is reached), then raise StopIteration
         return (header, seq, quality)
 
