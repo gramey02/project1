@@ -3,7 +3,7 @@ name: seqparser_testing
 on: [push]
 
 jobs:
-  job-name:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
